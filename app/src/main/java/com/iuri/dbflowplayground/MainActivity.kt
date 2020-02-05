@@ -2,12 +2,9 @@ package com.iuri.dbflowplayground
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +16,19 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener {
             startActivityForResult(Intent(this, AddSomeoneActivity::class.java), 99)
         }
-    }
 
+        // TODO fill with correct data
+        recycler_view.adapter = ListAdapter(
+            listOf(
+                ListAdapterItem("First teacher"),
+                ListAdapterItem("Sec teacher"),
+                ListAdapterItem("Third teacher"),
+                ListAdapterItem("Other teacher"),
+                ListAdapterItem("Other teacher"),
+                ListAdapterItem("Other teacher"),
+                ListAdapterItem("Other teacher"),
+                ListAdapterItem("Other teacher")
+            )
+        )
+    }
 }
